@@ -1,7 +1,7 @@
-var React = require('react');
+let React = require('react');
 
-var {browserHistory} = require('react-router');
-var Login = React.createClass({
+let {browserHistory} = require('react-router');
+let Login = React.createClass({
 getInitialState: function()
 {
  return {username:'',password:'', isLoggedIn:''};
@@ -39,12 +39,15 @@ LoginUser: function()
    <div className="Login">
         <h2 className="text-center">Login</h2>
         <div className="form-group">
-        <input className="form-control" onChange={this.handleUserName}  placeholder="Enter a User Name..."  type="text" />
+        <input className="form-control" onChange={this.handleUserName}
+           placeholder="Enter a User Name..." type="text" />
         </div>
         <div className="form-group">
-        <input className="form-control" onChange={this.handlePassword}  placeholder="Enter a Password..."  type="password" />
+        <input className="form-control" onChange={this.handlePassword}
+           placeholder="Enter a Password..." type="password" />
         </div>
-        <input className="btn btn-primary btn-block" onClick={this.LoginUser} type="submit" value="Login" />
+        <input className="btn btn-primary btn-block" onClick={this.LoginUser}
+          type="submit" value="Login" />
    </div>
 
 

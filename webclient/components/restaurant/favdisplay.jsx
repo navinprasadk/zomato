@@ -12,9 +12,9 @@ class FavDisplay extends React.Component {
     this.props.updateComments(id,comments).bind(this);
   }
   render() {
-    var remove = this.props.remove;
+    let remove = this.props.remove;
     let updateComments = this.updateComments.bind(this);
-    var res_data = this.props.obj.map(function(obj) {
+    let res_data = this.props.obj.map(function(obj) {
         return (
           <Cards
           dbId={obj._id}
@@ -33,7 +33,7 @@ class FavDisplay extends React.Component {
 
     return (
         <div>
-            <Card.Group >{res_data}  </Card.Group>
+            <Card.Group>{res_data}</Card.Group>
         </div>
     );
   }

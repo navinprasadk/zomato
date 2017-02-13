@@ -1,25 +1,6 @@
-// let React  =  require('react');
-// let {Link}  =  require('react-router');
-// let NavBar  =  React.createClass({
-//
-// render:function(){
-//   return(
-//     <div className = "container-fluid">
-//     <ul className = "nav navbar-nav">
-//     <li><Link to = "/">Home</Link></li>
-//     <li><Link to = "/favourites">Favourites</Link></li>
-//     <li><Link to = "/about">About Us</Link></li>
-//     </ul>
-//     </div>
-//   );
-// }
-// });
-//
-// module.exports = NavBar;
-
 import React, {Component} from 'react'
 import {Menu} from 'semantic-ui-react'
- let {Link}  =  require('react-router');
+ let {Link} = require('react-router');
 class MenuExampleBasic extends Component {
     state = {}
 
@@ -31,12 +12,14 @@ class MenuExampleBasic extends Component {
         return (
             <Menu pointing color='orange'>
                 <Link to="/home">
-                    <Menu.Item name='/home' active={activeItem === '/home'} onClick={this.handleItemClick}>
+                    <Menu.Item name='/home' active={activeItem === '/home'}
+                    onClick={this.handleItemClick}>
                         Home
                     </Menu.Item>
                 </Link>
                 <Link to="/favourites">
-                    <Menu.Item name='favourites' active={activeItem === 'favourites'} onClick={this.handleItemClick}>
+                    <Menu.Item name='favourites' active={activeItem === 'favourites'}
+                      onClick={this.handleItemClick}>
                         Favourites
                     </Menu.Item>
                 </Link>

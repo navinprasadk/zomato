@@ -27,9 +27,13 @@ class Child1 extends React.Component {
               <Divider/>
               <Grid.Column>
                 <div className = 'searchBox'>
-                    <Input  placeholder = 'City' type = "text" ref = 'city' onChange = {this.changeCity.bind(this)} value = {this.state.city}/>
-                    <Input  placeholder = 'Cuisine' type = "text" ref = 'Cuisine' onChange = {this.changeCuisine.bind(this)} value = {this.state.Cuisine}/>
-                    <Button  color = 'orange' onClick = {this.a.bind(this)}>Search Restaurant</Button>
+                    <Input placeholder = 'City' type = "text" ref = 'city'
+                      onChange = {this.changeCity.bind(this)} value = {this.state.city}/>
+                    <Input placeholder = 'Cuisine' type = "text" ref = 'Cuisine'
+                       onChange = {this.changeCuisine.bind(this)} value = {this.state.Cuisine}/>
+                    <Button color = 'orange' onClick = {this.a.bind(this)}>
+                      Search Restaurant
+                    </Button>
 
                 </div>
               </Grid.Column>

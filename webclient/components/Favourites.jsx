@@ -1,6 +1,6 @@
-let React  =  require('react');
+let React = require('react');
 
-let Favourites  =  React.createClass({
+let Favourites = React.createClass({
 
 render:function()
 {

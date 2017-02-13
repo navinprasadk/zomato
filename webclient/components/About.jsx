@@ -1,5 +1,5 @@
-let React  =  require('react');
-let About  =  React.createClass({
+let React = require('react');
+let About = React.createClass({
 
 render:function()
 {

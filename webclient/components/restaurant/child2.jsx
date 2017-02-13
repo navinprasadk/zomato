@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import Cards from './Card.jsx';
 import {Card, Icon, Image} from 'semantic-ui-react'
 class DisplayComponent extends React.Component {
@@ -8,7 +7,7 @@ class DisplayComponent extends React.Component {
     }
     render()
     {
-        var res_data = this.props.handle2.map(function(objs) {
+        let res_data = this.props.handle2.map(function(objs) {
             return(
               <Cards name = {objs.restaurant.name}
                 id = {objs.restaurant.id}

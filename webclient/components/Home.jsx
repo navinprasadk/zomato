@@ -1,5 +1,5 @@
-let React  =  require('react');
-let Home  =  React.createClass({
+let React = require('react');
+let Home = React.createClass({
 
 render:function()
 {

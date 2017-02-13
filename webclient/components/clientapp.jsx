@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 let ChildComponent = require('./restaurant/index.jsx');
 
 class MainComponent extends React.Component {
@@ -8,7 +7,7 @@ class MainComponent extends React.Component {
 				this.state = {result:[]};
     }
 
-		getRestaurantCityFromZomato(city,  Cuisine)
+		getRestaurantCityFromZomato(city, Cuisine)
     {
         $.ajax({
             url: "https://developers.zomato.com/api/v2.1/locations?query=" + city,

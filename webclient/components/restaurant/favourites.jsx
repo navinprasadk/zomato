@@ -22,9 +22,9 @@ class Favourites extends React.Component {
     });
   }
   remove(id){
-    var json1=this.state.obj;
-    var arr=[];
-    for(var item of json1) {
+    let json1 = this.state.obj;
+    let arr = [];
+    for(let item of json1) {
       if(item.id!=id) {
         arr.push(item);
       }
@@ -34,7 +34,7 @@ class Favourites extends React.Component {
   updateComments(id, comments){
     let json1 = this.state.obj;
     for(let item of json1) {
-      if(item._id == id) {
+      if(item._id === id) {
         item.comments = comments;
       }
     }
