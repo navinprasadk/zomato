@@ -1,5 +1,5 @@
 let React = require('react');
-
+import {Input} from 'semantic-ui-react';
 let {browserHistory} = require('react-router');
 let Login = React.createClass({
 getInitialState: function()
@@ -39,14 +39,14 @@ LoginUser: function()
    <div className="Login">
         <h2 className="text-center">Login</h2>
         <div className="form-group">
-        <input className="form-control" onChange={this.handleUserName}
+        <Input className="form-control" onChange={this.handleUserName}
            placeholder="Enter a User Name..." type="text" />
         </div>
         <div className="form-group">
-        <input className="form-control" onChange={this.handlePassword}
+        <Input className="form-control" onChange={this.handlePassword}
            placeholder="Enter a Password..." type="password" />
         </div>
-        <input className="btn btn-primary btn-block" onClick={this.LoginUser}
+        <Input className="btn btn-primary btn-block" onClick={this.LoginUser}
           type="submit" value="Login" />
    </div>
 

@@ -23,6 +23,12 @@ class MenuExampleBasic extends Component {
                         Favourites
                     </Menu.Item>
                 </Link>
+                <Link to="/about">
+                    <Menu.Item name='/about' active={activeItem === '/about'}
+                    onClick={this.handleItemClick}>
+                        About
+                    </Menu.Item>
+                </Link>
             </Menu>
         )
     }
