@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Cards from './Card.jsx';
-import {Card, Icon, Image} from 'semantic-ui-react'
+import {Card} from 'semantic-ui-react';
 class DisplayComponent extends React.Component {
     constructor() {
         super();
@@ -14,8 +14,7 @@ class DisplayComponent extends React.Component {
                 image = {objs.restaurant.featured_image}
                 location = {objs.restaurant.location.address}
                 cuisines = {objs.restaurant.cuisines}
-                ratings = {objs.restaurant.user_rating.aggregate_rating}/>)
-
+                ratings = {objs.restaurant.user_rating.aggregate_rating}/>);
         });
         return (
             <div>
@@ -23,6 +22,5 @@ class DisplayComponent extends React.Component {
             </div>
         );
     }
-
 }
 module.exports = DisplayComponent;

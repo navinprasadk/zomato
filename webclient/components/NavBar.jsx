@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Menu} from 'semantic-ui-react'
+import React, {Component} from 'react';
+import {Menu} from 'semantic-ui-react';
  let {Link} = require('react-router');
 class MenuExampleBasic extends Component {
     state = {}
@@ -7,10 +7,9 @@ class MenuExampleBasic extends Component {
     handleItemClick = (e, {name}) => this.setState({activeItem: name})
 
     render() {
-        const {activeItem} = this.state
-
+        const {activeItem} = this.state;
         return (
-            <Menu pointing color='orange'>
+            <Menu fixed pointing color='orange'>
                 <Link to="/home">
                     <Menu.Item name='/home' active={activeItem === '/home'}
                     onClick={this.handleItemClick}>
@@ -30,7 +29,7 @@ class MenuExampleBasic extends Component {
                     </Menu.Item>
                 </Link>
             </Menu>
-        )
+        );
     }
 }
 module.exports = MenuExampleBasic;

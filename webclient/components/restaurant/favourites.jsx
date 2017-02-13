@@ -4,34 +4,34 @@ import FavDisplay from './favdisplay.jsx';
 class Favourites extends React.Component {
   constructor() {
     super();
-    this.state = { obj : [] };
+    this.state = { obj: [] };
     this.getRestaurants();
   }
 
   getRestaurants() {
     $.ajax({
-        url: "http://localhost:8080/restaurants/viewRestaurant",
+        url: 'http://localhost:8080/restaurants/viewRestaurant',
         type: 'GET',
         success: function(data) {
-            this.setState({obj:data});
+            this.setState({obj: data});
         }.bind(this),
         error: function(err) {
             console.log('error occurred on AJAX');
             console.log(err);
-        }.bind(this)
+        }
     });
   }
-  remove(id){
+  remove(id) {
     let json1 = this.state.obj;
     let arr = [];
     for(let item of json1) {
-      if(item.id!=id) {
+      if(item.id !== id) {
         arr.push(item);
       }
     }
-    this.setState({obj:arr});
+    this.setState({obj: arr});
   }
-  updateComments(id, comments){
+  updateComments(id, comments) {
     let json1 = this.state.obj;
     for(let item of json1) {
       if(item._id === id) {
@@ -48,5 +48,4 @@ class Favourites extends React.Component {
     );
   }
 }
-
 module.exports = Favourites;

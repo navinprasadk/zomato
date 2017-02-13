@@ -1,15 +1,13 @@
 import React from 'react';
-import {Card, Grid, Icon, Button, Image} from 'semantic-ui-react'
-
+import {Card} from 'semantic-ui-react';
 import Cards from './Card.jsx';
-
 
 class FavDisplay extends React.Component {
   constructor() {
     super();
   }
   updateComments(id, comments) {
-    this.props.updateComments(id,comments).bind(this);
+    this.props.updateComments(id, comments).bind(this);
   }
   render() {
     let remove = this.props.remove;

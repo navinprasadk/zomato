@@ -1,12 +1,12 @@
-import React from 'react'
-import {Icon, Button} from 'semantic-ui-react'
+import React from 'react';
+import {Icon, Button} from 'semantic-ui-react';
 class ButtonComponent extends React.Component{
   constructor() {
       super();
   }
-  render(){
-    let but = "";
-    if (this.props.fav === "fav") {
+  render() {
+    let but = '';
+    if (this.props.fav === 'fav') {
         but = (
           <div>
 
@@ -20,8 +20,7 @@ class ButtonComponent extends React.Component{
         );
     } else {
         but = (
-
-                <Button fluid color ='orange' floated ='right' className ='buttonStyle'
+          <Button fluid color ='orange' floated ='right' className ='buttonStyle'
                   onClick = {this.props.addRestaurant}>
                     save
                     <Icon name = 'right heart'/>
@@ -37,4 +36,4 @@ class ButtonComponent extends React.Component{
     )
   }
 }
-module.exports=ButtonComponent;
+module.exports = ButtonComponent;

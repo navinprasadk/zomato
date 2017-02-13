@@ -1,17 +1,16 @@
-import React from 'react'
+import React from 'react';
 import { Card, Icon, Input, Image} from 'semantic-ui-react';
 import ButtonComponent from './button.jsx';
 
 class Cards extends React.Component {
     constructor() {
         super();
-    this.state = {comments:'', status : 'delete', updateStatus: 'Update'}
-
+    this.state = {comments: '', status: 'delete', updateStatus: 'Update'};
     }
 
     addRestaurant() {
         $.ajax({
-            url: "http://localhost:8080/restaurants/addRestaurant",
+            url: 'http://localhost:8080/restaurants/addRestaurant',
             type: 'POST',
             data: {
                 'name': this.props.name,
@@ -23,30 +22,27 @@ class Cards extends React.Component {
             },
             success: function(data) {
                 console.log(data);
-
-            }.bind(this),
+            },
             error: function(err) {
                 console.log('error occurred on AJAX');
                 console.log(err);
-            }.bind(this)
+            }
         });
     }
     deleteRestaurant() {
-
     let id = this.props.id;
 
     $.ajax({
         url: `http://localhost:8080/restaurants/deleteRestaurant/${id}`,
         type: 'DELETE',
-        success: function(data) {
+        success: function() {
             this.props.remove(id);
             // this.setState ({status : 'deleted'});
-
         }.bind(this)
     });
 }
 updateRestaurant() {
-  alert('inside updateRestaurant');
+  // alert('inside updateRestaurant');
     let id = this.props.dbId;
     let comments = this.state.comments;
     $.ajax({
@@ -55,7 +51,7 @@ updateRestaurant() {
       data: {
         'comments': comments
       },
-      success: function(e) {
+      success: function() {
         // console.log(e);
         // this.setState ({updateStatus: 'updated'});
         this.update(id, comments);
@@ -69,15 +65,16 @@ update(id, comments) {
   this.props.updateComments(id, comments).bind(this);
 }
 updateComments(e) {
-  this.setState({comments:e.target.value})
+  this.setState({comments: e.target.value})
 }
     render()
     {
         let fav1 = this.props.fav;
-        let updateClick1= this.updateRestaurant.bind(this);
+        let updateClick1 = this.updateRestaurant.bind(this);
         let but = '';
-        if (this.props.fav === "fav") {
-          but= <Input fluid type = 'text' placeholder = {this.props.comments} onChange = {this.updateComments.bind(this)} value = {this.state.comments} />
+        if (this.props.fav === 'fav') {
+          but= <Input fluid type = 'text' placeholder = {this.props.comments}
+             onChange = {this.updateComments.bind(this)} value = {this.state.comments} />
         }
         return (
             <div className = 'cardStyle'>
@@ -87,7 +84,8 @@ updateComments(e) {
                         <Card.Content>
                             <Card.Header className = 'headStyle'>{this.props.name}</Card.Header>
                             <Card.Meta className = 'metaStyle'>{this.props.cuisines}</Card.Meta>
-                            <Card.Description className = 'descriptionStyle'>{this.props.location}</Card.Description>
+                            <Card.Description className = 'descriptionStyle'>{this.props.location}
+                            </Card.Description>
                         </Card.Content>
                         <Card.Content extra className = 'extraStyle'>
                             <a>
@@ -98,11 +96,10 @@ updateComments(e) {
                             {but}
                         </Card.Content>
 
-
                         <ButtonComponent fav={fav1} updateClick = {updateClick1}
-                          updateStatus={this.state.updateStatus||'Update'}
+                          updateStatus={this.state.updateStatus || 'Update'}
                            deleteClick={this.deleteRestaurant.bind(this)}
-                          deleteStatus={this.state.status ||'Delete'}
+                          deleteStatus={this.state.status || 'Delete'}
                           updateComments={this.updateComments.bind(this)}
                           comments={this.props.comments}
                           addRestaurant={this.addRestaurant.bind(this)}

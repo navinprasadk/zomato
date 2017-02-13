@@ -4,37 +4,36 @@ let {browserHistory} = require('react-router');
 let Login = React.createClass({
 getInitialState: function()
 {
- return {username:'',password:'', isLoggedIn:''};
+ return {username: '', password: '', isLoggedIn: ''};
 },
 handleUserName: function(e)
 {
- this.setState({username:e.target.value});
+ this.setState({username: e.target.value});
 },
 handlePassword: function(e)
 {
- this.setState({password:e.target.value});
+ this.setState({password: e.target.value});
 },
 LoginUser: function()
 {
  $.ajax({
-   url:"http://localhost:8080/users/login",
+   url: 'http://localhost:8080/users/login',
    type: 'POST',
    datatype: 'JSON',
-   data:this.state,
+   data: this.state,
    success: function(res)
    {
      console.log(res.responseText);
      browserHistory.push('/home');
-   }.bind(this),
+   },
    error: function(err)
    {
      alert("Invalid username or password");
-     console.log(err.responseText);
-   }.bind(this)
+    //  console.log(err.responseText);
+   }
  });
-}
-,
- render: function(){
+},
+ render: function() {
    return(
    <div className="Login">
         <h2 className="text-center">Login</h2>
@@ -46,13 +45,13 @@ LoginUser: function()
         <Input className="form-control" onChange={this.handlePassword}
            placeholder="Enter a Password..." type="password" />
         </div>
-        <Input className="btn btn-primary btn-block" onClick={this.LoginUser}
+        <Input primary className="btn btn-primary btn-block" onClick={this.LoginUser}
           type="submit" value="Login" />
    </div>
 
 
    );
  }
-})
+});
 
-module.exports=Login;
+module.exports = Login;

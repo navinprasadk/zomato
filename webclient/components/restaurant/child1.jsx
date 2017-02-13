@@ -1,7 +1,6 @@
 import React from 'react';
-import {Input} from 'semantic-ui-react'
-import {Button, Segment} from 'semantic-ui-react'
-import {Container, Divider, Grid} from 'semantic-ui-react'
+import {Input} from 'semantic-ui-react';
+import {Container, Divider, Grid, Button} from 'semantic-ui-react';
 
 class Child1 extends React.Component {
     constructor() {
@@ -9,13 +8,13 @@ class Child1 extends React.Component {
         this.state = {
             city: '',
             Cuisine: ''
-        }
+        };
     }
     changeCity(e) {
-        this.setState({city: e.target.value})
+        this.setState({city: e.target.value});
     }
     changeCuisine(e) {
-        this.setState({Cuisine: e.target.value})
+        this.setState({Cuisine: e.target.value});
     }
     a()
     {
@@ -34,11 +33,9 @@ class Child1 extends React.Component {
                     <Button color = 'orange' onClick = {this.a.bind(this)}>
                       Search Restaurant
                     </Button>
-
                 </div>
               </Grid.Column>
                 <Divider/>
-
             </Container>
         );
     }
