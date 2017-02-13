@@ -1,11 +1,11 @@
 import React from 'react'
-import { Card, Grid, Label, Icon, Input, Button, Image, Group} from 'semantic-ui-react';
+import { Card, Icon, Input, Image} from 'semantic-ui-react';
 import ButtonComponent from './button.jsx';
 
 class Cards extends React.Component {
     constructor() {
         super();
-    this.state = {comments:'',status : 'delete',updateStatus:'Update'}
+    this.state = {comments:'', status : 'delete', updateStatus: 'Update'}
 
     }
 
@@ -46,27 +46,39 @@ class Cards extends React.Component {
     });
 }
 updateRestaurant() {
+  alert('inside updateRestaurant');
     let id = this.props.dbId;
     let comments = this.state.comments;
     $.ajax({
       url: `http://localhost:8080/restaurants/updateRestaurant/${id}`,
       type: 'PUT',
-      data:{
+      data: {
         'comments': comments
       },
       success: function(e) {
-        console.log(e);
-        this.setState ({updateStatus: 'updated'});
+        // console.log(e);
+        // this.setState ({updateStatus: 'updated'});
+        this.update(id, comments);
       }.bind(this)
     });
+    this.setState({
+      comments: ''
+    });
+}
+update(id, comments) {
+  this.props.updateComments(id, comments).bind(this);
 }
 updateComments(e) {
-
   this.setState({comments:e.target.value})
 }
     render()
     {
-        let fav1=this.props.fav;
+        let fav1 = this.props.fav;
+        let updateClick1= this.updateRestaurant.bind(this);
+        let but = '';
+        if (this.props.fav === "fav") {
+          but= <Input fluid type = 'text' placeholder = {this.props.comments} onChange = {this.updateComments.bind(this)} value = {this.state.comments} />
+        }
         return (
             <div className = 'cardStyle'>
                 <div className = 'ui center aligned grid'>
@@ -82,11 +94,17 @@ updateComments(e) {
                               <Icon name = 'star' color = 'orange'/> {this.props.ratings}
                             </a>
                         </Card.Content>
+                        <Card.Content extra>
+                            {but}
+                        </Card.Content>
 
-                        <ButtonComponent fav={fav1} updateClick = {this.updateRestaurant.bind(this)}
-                          updateStatus={this.state.updateStatus||'Update'} deleteClick={this.deleteRestaurant.bind(this)}
+
+                        <ButtonComponent fav={fav1} updateClick = {updateClick1}
+                          updateStatus={this.state.updateStatus||'Update'}
+                           deleteClick={this.deleteRestaurant.bind(this)}
                           deleteStatus={this.state.status ||'Delete'}
-                          updateComments={this.updateComments.bind(this)} comments={this.props.comments}
+                          updateComments={this.updateComments.bind(this)}
+                          comments={this.props.comments}
                           addRestaurant={this.addRestaurant.bind(this)}
                         />
 

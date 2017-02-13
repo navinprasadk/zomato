@@ -8,9 +8,12 @@ class FavDisplay extends React.Component {
   constructor() {
     super();
   }
-
+  updateComments(id, comments) {
+    this.props.updateComments(id,comments).bind(this);
+  }
   render() {
     var remove = this.props.remove;
+    let updateComments = this.updateComments.bind(this);
     var res_data = this.props.obj.map(function(obj) {
         return (
           <Cards
@@ -23,6 +26,7 @@ class FavDisplay extends React.Component {
           ratings = {obj.ratings}
           comments = {obj.comments}
           remove = {remove}
+          updateComments= {updateComments}
           fav = "fav"/>
         );
     });

@@ -1,32 +1,4 @@
-// let router = require('express').Router();
-// let bodyParser = require('body-parser');
-// let user = require('userEntity');
-// router.use(bodyParser.json());
-// // add a user
-// router.post('/add',(req,res) => {
-//   logger.debug("Inside user post");
-//   let dt = new mydb({
-//         text: req.body.name
-//     });
-//     dtab.save().then((doc) => {
-//         res.send(doc);
-//         res.send("Added successfully");
-//     }, (e) => {
-//         res.status(400).send(e);
-//     });
-// });
-// // find a user
-// router.get('/find/:id',(req,res) => {
-//   logger.debug("Inside user find");
-//   let id = req.params.id;
-//   mydb.findById(id).then((doc) => {
-//     res.send(doc);
-//   },(e) => {
-//       res.status(400).send(e);
-//   });
-// });
-//
-// router.patch()
+
 
 var User = require('./userEntity');
 

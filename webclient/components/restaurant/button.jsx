@@ -10,7 +10,7 @@ class ButtonComponent extends React.Component{
     if (this.props.fav === "fav") {
         but = (
           <div>
-            <Input fluid type = 'text' placeholder = {this.props.comments} onChange={this.props.updateComments} /> <br/>
+          
                 <Button.Group fluid>
                     <Button color ='orange' floated ='right' className ='buttonStyle' onClick = {this.props.updateClick} >{this.props.updateStatus}</Button>
                     <Button inverted color ='orange' floated ='left' className ='buttonStyle' onClick = {this.props.deleteClick} >{this.props.deleteStatus}</Button>

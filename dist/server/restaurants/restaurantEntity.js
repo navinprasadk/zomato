@@ -1,13 +1,14 @@
-const mongoose = require('mongoose');
+let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-
-var mdb = new mongoose.Schema( {
+// Defines the schema
+let mdb = new mongoose.Schema( {
   name:String,
-  address:String,
+  id:Number,
+  location:{type:String,unique:true},
   cuisines:String,
   ratings:Number,
-  image:String
-
+  image:String,
+  comments:{type:String}
 });
- var restaur = mongoose.model('restaurant',mdb)
+let restaur = mongoose.model('restaurant',mdb)
 module.exports = restaur;
