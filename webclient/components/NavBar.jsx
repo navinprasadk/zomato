@@ -30,8 +30,8 @@ class MenuExampleBasic extends Component {
 
         return (
             <Menu pointing color='orange'>
-                <Link to="/">
-                    <Menu.Item name='/' active={activeItem === '/'} onClick={this.handleItemClick}>
+                <Link to="/home">
+                    <Menu.Item name='/home' active={activeItem === '/home'} onClick={this.handleItemClick}>
                         Home
                     </Menu.Item>
                 </Link>

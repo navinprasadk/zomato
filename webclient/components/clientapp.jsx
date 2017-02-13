@@ -27,10 +27,10 @@ class MainComponent extends React.Component {
             }.bind(this)
         });
     }
-    getRestaurantDataFromZomato(id,  cus)
+    getRestaurantDataFromZomato(id, cus)
     {
         $.ajax({
-            url: "https://developers.zomato.com/api/v2.1/search?entity_id=" + id + "&entity_type=city&q=" + cus + "&count=20&apikey=2f03afa715b5c97179b12454e9e9f4e7",
+            url: "https://developers.zomato.com/api/v2.1/search?entity_id=" + id + "&entity_type=city&q=" + cus + "&count=12&apikey=2f03afa715b5c97179b12454e9e9f4e7",
             type: 'GET',
             beforeSend: function(request) {
                 request.setRequestHeader("user-key",  "2f03afa715b5c97179b12454e9e9f4e7");

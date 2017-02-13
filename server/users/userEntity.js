@@ -13,19 +13,22 @@
 // });
 //
 // module.exports = {userSchema};
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
-const schema = new mongoose.Schema({
-	userName: {
-		type : String,
-		required : true
-	},
-	password:{
-		type : String,
-		required : true
-	}
+var schema = new mongoose.Schema({
+   username: {
+       type: String,
+       required: true,
+       trim: true
+   },
+   password: {
+       type: String,
+       required: true,
+       trim: true
+   }
 });
-const model = mongoose.model('User', schema);
-module.exports = {
-	userModel: model
-};
+
+var User = mongoose.model('user', schema);
+
+module.exports = User;
