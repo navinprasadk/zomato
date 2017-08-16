@@ -1,6 +1,6 @@
 let restaurant = require('./restaurantEntity');
 let RestaurantController = {
-  // Add the data
+  // Add the values
     add: function(req, res) {
         let newRes = new restaurant({
             "name": req.body.name,
@@ -18,7 +18,7 @@ let RestaurantController = {
             res.send(e);
         });
     },
-    // Updates the value
+    // Update the value
     update: function(req, res) {
         let id = req.params.id;
         restaurant.findByIdAndUpdate(id, {
@@ -41,7 +41,7 @@ let RestaurantController = {
             res.send('hello error');
         });
     },
-    // Views the saved values
+    // View the saved data
     view: function(req, res) {
         restaurant.find().then((doc) => {
             res.send(doc);
