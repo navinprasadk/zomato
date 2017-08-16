@@ -7,7 +7,7 @@ const app = require('../../bin/www');
 const Restaurants = require('../server/restaurants/restaurantEntity');
 const url = supertest('http://localhost:8080/restaurants');
 
-describe('Restaurant CRUD Testing using sinon',() {
+describe('Restaurant CRUD Testing using sinon',() => {
 
   it('should get all the restaurant',(done) => {
       let RestaurantMock = sinon.mock(Restaurants);
