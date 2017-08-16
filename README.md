@@ -1,12 +1,11 @@
-# Zynla
-Relevance through collaborative search
+# Zomato
 
-Zynla is a collaborative search engine, so that you can search as a team to access relevant documents
+
+Zomato is a restaurant search and discovery service
 
 ## Supports
 
 - Webpack
-- Material UI
 - Hot Module replacement
 - React Hotloading (persists state)
 - Recommended folder structure for a react.js webapp project
