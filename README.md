@@ -1,16 +1,8 @@
 # Zomato
 
-
 Zomato is a restaurant search and discovery service
 
-## Supports
-
-- Webpack
-- Hot Module replacement
-- React Hotloading (persists state)
-- Recommended folder structure for a react.js webapp project
-
-### How to start running
+## How to start running
 Run these commands
 
 To install the required dependencies
@@ -19,7 +11,7 @@ To install the required dependencies
 
 To build the app
 
-	$ npm run build
+	$ npm run gbuild
 
 To run the app
 
